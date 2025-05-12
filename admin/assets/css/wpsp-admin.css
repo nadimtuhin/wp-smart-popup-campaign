@@ -1,0 +1,14 @@
+.wpsp-form-table th {
+    width: 200px;
+}
+.wpsp-setting-image,
+.wpsp-setting-html,
+.wpsp-setting-specific-pages,
+.wpsp-setting-reappear-days {
+    /* display: none; JS will handle this */
+}
+.wpsp-image-preview img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+} 
