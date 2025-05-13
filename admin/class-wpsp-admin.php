@@ -223,10 +223,10 @@ class WPSP_Admin {
         $clicks = (int) get_post_meta( $post->ID, '_wpsp_clicks', true );
         $ctr = ( $views > 0 ) ? round( ( $clicks / $views ) * 100, 2 ) : 0;
         ?>
-        <p><strong><?php _e( 'Views:', 'wp-smart-popup' ); ?></strong> <?php echo $views; ?></p>
-        <p><strong><?php _e( 'Clicks:', 'wp-smart-popup' ); ?></strong> <?php echo $clicks; ?></p>
-        <p><strong><?php _e( 'CTR:', 'wp-smart-popup' ); ?></strong> <?php echo $ctr; ?>%</p>
-        <p class="description"><?php _e( 'Analytics are updated automatically.', 'wp-smart-popup' ); ?></p>
+        <p><strong><?php esc_html_e( 'Views:', 'wp-smart-popup' ); ?></strong> <?php echo $views; ?></p>
+        <p><strong><?php esc_html_e( 'Clicks:', 'wp-smart-popup' ); ?></strong> <?php echo $clicks; ?></p>
+        <p><strong><?php esc_html_e( 'CTR:', 'wp-smart-popup' ); ?></strong> <?php echo $ctr; ?>%</p>
+        <p class="description"><?php esc_html_e( 'Analytics are updated automatically.', 'wp-smart-popup' ); ?></p>
         <?php
     }
 

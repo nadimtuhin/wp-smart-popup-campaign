@@ -133,9 +133,11 @@ class WPSP_Public {
 
     public function ajax_increment_view() {
         check_ajax_referer( 'wpsp_ajax_nonce', 'nonce' );
-
         if ( isset( $_POST['campaign_id'] ) ) {
             $campaign_id = intval( $_POST['campaign_id'] );
+            if ( ! get_post( $campaign_id ) || get_post_type( $campaign_id ) !== 'popup_campaign' ) {
+                wp_send_json_error( array( 'message' => 'Invalid campaign.' ) );
+            }
             $views = (int) get_post_meta( $campaign_id, '_wpsp_views', true );
             update_post_meta( $campaign_id, '_wpsp_views', $views + 1 );
             wp_send_json_success( array( 'message' => 'View tracked.' ) );
